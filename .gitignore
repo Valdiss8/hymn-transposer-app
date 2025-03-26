@@ -1,0 +1,62 @@
+# =============== PYTHON (BACKEND) =================
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Static output
+static/outputs/
+static/uploads/
+
+# =============== FLUTTER (FRONTEND) ===============
+
+# Build outputs
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.dart_tool/
+.packages
+pubspec.lock
+
+# Generated files
+*.lock
+*.tmp
+
+# Android/iOS build
+android/.gradle/
+android/.idea/
+android/local.properties
+ios/Flutter/Flutter.podspec
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Generated.xcconfig
+
+# macOS
+macos/Flutter/GeneratedPluginRegistrant.swift
+
+# Web build
+web/.dart_tool/
+web/build/
+
+# =============== SYSTEM FILES ======================
+
+.DS_Store
+Thumbs.db
+
+# =============== THIRD-PARTY TOOLS =================
+
+Audiveris/
+MuseScore*/
+
