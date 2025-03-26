@@ -28,99 +28,117 @@ The system supports:
 - 📱 Flutter (Frontend mobile app)
 - 🖼️ OpenCV (Image preprocessing)
 
+## Repository
+
+🔗 GitHub: [https://github.com/Valdiss8/hymn-transposer-app](https://github.com/Valdiss8/hymn-transposer-app)
+
 ## Installation Instructions
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Hymnals_transpose.git
-cd Hymnals_transpose
+git clone https://github.com/Valdiss8/hymn-transposer-app.git
+cd hymn-transposer-app
 ```
 
 ### 2. Backend Setup (Python + FastAPI)
 
-1. Navigate to backend folder
+1. Navigate to the backend directory (where your Python source files are located):
 
 ```bash
 cd backend
 ```
 
-2. Create a virtual environment and activate it
+2. Create a virtual environment and activate it:
 
 ```bash
 python -m venv venv
-venv\Scripts\activate   # For Windows
-# Or
-source venv/bin/activate  # For macOS/Linux
+venv\Scripts\activate   # On Windows
+# or
+source venv/bin/activate   # On macOS/Linux
 ```
 
-3. Install dependencies
+3. Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Run the FastAPI server
+4. Run the FastAPI backend:
 
 ```bash
 uvicorn main:app --reload
 ```
 
-By default, the backend will be available at `http://127.0.0.1:8000`
+The backend server will be available at: `http://127.0.0.1:8000`
+
+You can open Swagger UI for testing: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ### 3. Flutter App Setup
 
-1. Open the frontend folder in Visual Studio Code or another IDE  
-2. Install Flutter dependencies
+1. Open the `frontend` folder in **Visual Studio Code** or another IDE
+2. Install Flutter dependencies:
 
 ```bash
 flutter pub get
 ```
 
-3. Run the app
+3. Run the Flutter app:
 
 ```bash
 flutter run
 ```
 
-Make sure you have an emulator or device connected.
+Make sure you have an Android emulator or physical device connected.
 
 ## File Structure
 
 ```
-Hymnals_transpose/
+hymn-transposer-app/
 │
-├── backend/                # FastAPI project
-│   ├── static/             # Output files
-│   ├── preprocess.py       # Image preprocessing
-│   ├── transposition.py    # MusicXML parsing and transposition
-│   ├── export_pdf.py       # PDF export with MuseScore
-│   └── main.py             # FastAPI server
+├── backend/
+│   ├── __pycache__/
+│   ├── static/                # Contains uploaded and output files
+│   ├── venv/                  # Virtual environment (not uploaded to GitHub)
+│   ├── export_pdf.py          # MuseScore PDF export
+│   ├── main.py                # FastAPI application entry point
+│   ├── omr.py                 # OMR integration with Audiveris
+│   ├── preprocess.py          # Image preprocessing with OpenCV
+│   ├── transposition.py       # Transposition logic using music21
+│   └── requirements.txt       # Backend dependencies
 │
-├── frontend/               # Flutter mobile application
+├── frontend/                  # Flutter mobile app
+│   ├── lib/
+│   └── pubspec.yaml
 │
-├── requirements.txt        # Python dependencies
-├── .gitignore              # Ignored files and folders
-└── README.md               # Project overview and instructions
+├── .gitignore
+└── README.md
 ```
 
 ## Notes
 
-- Ensure that Audiveris and MuseScore 4 are installed on your machine and their executables are accessible in the system PATH or correctly referenced in your code.
-- The backend assumes that `.mxl` files are saved in `static/outputs/` and processed there.
-- The app does not currently support handwritten notation.
+- Make sure `MuseScore 4` and `Audiveris` are installed on your machine.
+- MuseScore and Audiveris executables should be correctly configured in the backend code.
+- Input image formats: `.png`, `.jpg`, `.jpeg`
+- Output formats: `.mxl`, `.pdf`
+- The app currently does **not** support handwritten musical scores.
 
 ## Future Improvements
 
-- Support for handwritten scores  
-- Real-time transposition preview  
-- Integration with MIDI output  
-- In-app editing of notes
+- Handwritten notation support
+- In-app score editing
+- MIDI export support
+- Real-time transposition preview
+- Docker containerization for easier deployment
 
 ## License
 
 MIT License
 
-## Author
+---
 
-Vadim Skrypiy – Master's Thesis, HSE University, 2025
+**Author**: Vadim Skrypiy  
+**Project type**: Master's Thesis  
+**Institution**: National Research University Higher School of Economics  
+**Program**: Master of Data Science  
+**Year**: 2025
